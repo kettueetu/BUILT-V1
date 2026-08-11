@@ -1,192 +1,115 @@
 <!doctype html>
 <html lang="fi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#111111">
-<title>BUILT</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BUILT V1</title>
 <style>
-:root{--bg:#f4f4f1;--card:#fff;--text:#111;--muted:#747474;--line:#e2e2de;--accent:#6d3fd0}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-button,input,select{font:inherit}.app{max-width:1000px;margin:auto;padding:14px 14px 90px}.header{display:flex;align-items:center;justify-content:space-between;gap:10px}.logo{font-weight:900;font-size:28px;letter-spacing:-1px}.logo span{color:var(--accent)}
-.nav{display:flex;gap:5px;overflow-x:auto;background:#e8e8e4;padding:5px;border-radius:14px;margin:12px 0;position:sticky;top:8px;z-index:5}.nav button{border:0;background:transparent;color:#666;font-weight:750;padding:10px 12px;border-radius:10px;white-space:nowrap}.nav button.active{background:#fff;color:var(--accent);box-shadow:0 1px 4px #0001}
-h1{font-size:30px;line-height:1.05;margin:20px 0 5px}h2{margin:0 0 8px}h3{margin:0 0 5px}.muted{color:var(--muted)}.small{font-size:12px}.eyebrow{font-size:11px;font-weight:850;letter-spacing:.13em;color:#888;margin-top:18px}
-.card,.item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;margin:10px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#fafafa;border-radius:12px;padding:12px}.stat b{font-size:21px}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.btn{border:0;border-radius:11px;padding:10px 13px;font-weight:750;cursor:pointer;background:#111;color:#fff}.btn.primary{background:var(--accent)}.btn.light{background:#eeeaf8;color:#5d31b4}.btn.danger{background:#f7eaea;color:#a22f2f}.btn.small{padding:7px 9px;font-size:12px}.wide{width:100%;margin-top:8px}
-input,select{width:100%;padding:10px;border:1px solid #d8d8d3;border-radius:10px;background:#fff;color:#111}label{font-size:12px;color:#777;display:block;margin:10px 0 4px}
-.clients{display:flex;gap:6px;overflow-x:auto;padding:4px 0 7px}.pill{white-space:nowrap;border:1px solid #ddd;border-radius:99px;background:#fff;padding:8px 12px}.pill.active{background:var(--accent);border-color:var(--accent);color:#fff}
-.macro{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.macro span{background:#f0ecf8;color:#5b31b1;border-radius:8px;padding:5px 8px;font-size:12px}.chart{height:210px;background:#fafafa;border:1px solid #ddd;border-radius:13px;margin-top:10px}
-.exercise{padding:10px;border:1px solid #eee;border-radius:11px;margin:7px 0}.exercise-grid{display:grid;grid-template-columns:1.6fr .5fr .8fr .7fr auto;gap:5px}.exercise-grid input{padding:8px;font-size:13px}
-.meal{border:1px solid #e5e5e1;border-radius:14px;padding:13px;margin:8px 0}.mealgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.modal{position:fixed;inset:0;background:#0006;z-index:20;padding:10px;display:flex;align-items:flex-end}.sheet{background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:800px;margin:auto;max-height:92vh;overflow:auto;padding:18px}.modal.center{align-items:center}.sheet.center{border-radius:20px}
-.notice{background:#fff8df;border:1px solid #ead89b;padding:11px;border-radius:12px;margin:10px 0}
-@media(max-width:650px){.grid,.mealgrid{grid-template-columns:1fr}.exercise-grid{grid-template-columns:1.3fr .45fr .7fr auto}.exercise-grid input:nth-child(4){display:none}.app{padding-left:11px;padding-right:11px}}
+:root{--bg:#f5f5f3;--card:#fff;--text:#111;--muted:#777;--line:#e6e6e3;--p:#7440d8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text)}
+.app{max-width:560px;margin:auto;min-height:100vh;padding-bottom:86px}.top{padding:22px 18px 10px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:27px;font-weight:900}.logo i{color:var(--p);font-style:normal}
+main{padding:8px 18px 24px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--muted)}h1{font-size:30px;letter-spacing:-.7px;margin:4px 0 6px}h2{margin:0 0 5px}h3{margin:0 0 4px;font-size:16px}.sub,.muted{color:var(--muted)}.small{font-size:13px}
+.card,.item{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:16px;margin:10px 0}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#fafafa;border-radius:13px;padding:13px}.stat b{font-size:23px}
+.btn{border:0;background:#111;color:#fff;border-radius:12px;padding:12px 15px;font-weight:750;width:100%;margin-top:10px}.btn.p{background:var(--p)}.btn.light{background:#eeeaf8;color:#5d31b4}.btn.small{width:auto;margin:0;padding:8px 10px}.pill{border:0;border-radius:99px;padding:8px 11px;background:#eee;font-weight:700}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);z-index:4}.navin{max-width:560px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);padding:6px 5px 8px}.nav button{border:0;background:none;color:#888;font-size:11px;padding:5px}.nav button.on{color:var(--p);font-weight:800}.nav span{display:block;font-size:19px}
+input,select,textarea{width:100%;border:1px solid #ddd;border-radius:11px;padding:11px;background:#fff;font:inherit}label{display:block;font-size:12px;color:var(--muted);margin:10px 0 5px}
+.list{display:grid;gap:8px}.check{width:23px;height:23px;border:2px solid #bbb;border-radius:50%;background:#fff;color:#fff}.check.done{background:var(--p);border-color:var(--p)}
+.tabs{display:flex;gap:5px;background:#e9e9e7;padding:4px;border-radius:11px}.tabs button{flex:1;border:0;background:transparent;padding:9px;border-radius:8px;font-weight:700}.tabs .on{background:#fff}
+.modal{position:fixed;inset:0;background:#0005;display:flex;align-items:flex-end;z-index:10}.sheet{background:#fff;border-radius:22px 22px 0 0;width:100%;max-width:560px;margin:auto;padding:20px;max-height:90vh;overflow:auto}
 </style>
 </head>
 <body>
 <div class="app">
- <div class="header"><div class="logo">BUILT<span>.</span></div><button class="btn light small" onclick="toggleRole()">Näkymä: <span id="roleLabel">Valmentaja</span></button></div>
- <div id="nav" class="nav"></div>
- <main id="main"></main>
+<div class="top"><div class="logo">BUILT<i>.</i></div><button class="pill" id="role" onclick="toggleRole()">Valmentaja</button></div>
+<main id="main"></main>
+<div class="nav"><div class="navin" id="nav"></div></div>
 </div>
 <script>
-(function(){
-"use strict";
-const KEY="BUILT_V1_5_DATA";
-const initial={
- clients:[
-  {id:1,name:"Emma",weight:82.4,goal:78,history:[84.2,83.7,83.1,82.8,82.4],adherence:92,programId:101,dietId:201},
-  {id:2,name:"Mika",weight:91.2,goal:86,history:[92.8,92.2,91.8,91.2],adherence:84,programId:102,dietId:202},
-  {id:3,name:"Laura",weight:67.8,goal:70,history:[66.5,67.1,67.8],adherence:96,programId:null,dietId:null}
- ],
- programs:[
-  {id:101,name:"4 viikon perusohjelma",goal:"Hypertrofia",weeks:[{name:"Viikko 1",days:[{name:"Alavartalo A",ex:[["Kyykky",4,"6–8","120 s"],["Romanialainen maastaveto",3,"8–10","120 s"],["Hip thrust",4,"8–12","90 s"]]}]}]},
-  {id:102,name:"Voima 3x viikko",goal:"Voima",weeks:[{name:"Viikko 1",days:[{name:"Koko kroppa",ex:[["Takakyykky",5,"5","150 s"],["Penkkipunnerrus",4,"6","120 s"],["Kulmasoutu",4,"8","90 s"]]}]}]}
- ],
- diets:[
-  {id:201,name:"2300 kcal · Painonpudotus",kcal:2300,p:170,c:230,f:75,meals:[["Aamiainen",401],["Lounas",402],["Välipala",405]]},
-  {id:202,name:"2700 kcal · Ylläpito",kcal:2700,p:180,c:300,f:80,meals:[["Aamiainen",401],["Lounas",406]]}
- ],
- meals:[
-  {id:401,name:"Proteiinipuuro + banaani",type:"Aamiainen",kcal:520,p:35,c:72,f:10,foods:["Kaurapuuro 80 g","Rahka 200 g","Banaani 1 kpl"]},
-  {id:402,name:"Kana-riisikulho",type:"Lounas",kcal:610,p:48,c:72,f:12,foods:["Kana 180 g","Riisi 150 g","Kasvikset 200 g"]},
-  {id:403,name:"Jauheliha-peruna",type:"Päivällinen",kcal:640,p:45,c:60,f:22,foods:["Jauheliha 5 % 180 g","Peruna 300 g","Kasvikset 200 g"]},
-  {id:404,name:"Ruisleipä + kananmunat",type:"Välipala",kcal:390,p:25,c:42,f:14,foods:["Ruisleipä 2 kpl","Kananmunat 2 kpl","Kalkkuna 50 g"]},
-  {id:405,name:"Rahka-marjavälipala",type:"Välipala",kcal:300,p:30,c:30,f:4,foods:["Rahka 250 g","Marjat 150 g"]},
-  {id:406,name:"Kana-wrap",type:"Lounas",kcal:570,p:44,c:55,f:18,foods:["Täysjyvätortilla 2 kpl","Kana 150 g","Kasvikset","Jogurttikastike"]}
- ],
- library:[]
-};
-function load(){try{const x=localStorage.getItem(KEY);return x?JSON.parse(x):structuredClone(initial)}catch(e){return structuredClone(initial)}}
-let db=load(), role="coach", page="dashboard", selected=1, editingProgram=null, editingDiet=null, overlay=null;
-const $=id=>document.getElementById(id);
-function save(){localStorage.setItem(KEY,JSON.stringify(db))}
-function selectedClient(){return db.clients.find(c=>c.id===selected)||db.clients[0]}
-function getProgram(){return db.programs.find(p=>p.id===editingProgram)}
-function getDiet(){return db.diets.find(d=>d.id===editingDiet)}
-function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-function nav(){
- const items=role==="coach"
- ?[["dashboard","Dashboard"],["clients","Asiakkaat"],["workouts","Harjoitukset"],["nutrition","Ravinto"],["library","Treenipankki"],["messages","Viestit"]]
- :[["home","Koti"],["clientWorkout","Treeni"],["clientFood","Ravinto"],["progress","Paino"],["messages","Viestit"]];
- $("nav").innerHTML=items.map(i=>`<button class="${page===i[0]?"active":""}" onclick="go('${i[0]}')">${i[1]}</button>`).join("");
- $("roleLabel").textContent=role==="coach"?"Valmentaja":"Asiakas";
+const db={clients:[
+{id:1,name:"Emma",age:30,sex:"Nainen",height:170,weight:82.4,goalWeight:78,activity:"Kohtalainen",goal:"Painonpudotus",notes:"Pidetään treenit 4x/vko.",workouts:[],diet:null},
+{id:2,name:"Mikko",age:36,sex:"Mies",height:181,weight:91.2,goalWeight:85,activity:"Korkea",goal:"Painonpudotus",notes:"",workouts:[],diet:null}
+],library:[
+{name:"Alavartalo A",tags:"Alavartalo · Hypertrofia",ex:[["Kyykky",4,"6–8","120 s"],["Romanialainen maastaveto",3,"8–10","120 s"],["Hip thrust",4,"8–12","90 s"],["Reiden koukistus",3,"10–15","60 s"]]},
+{name:"Ylävartalo A",tags:"Ylävartalo · Hypertrofia",ex:[["Penkkipunnerrus",4,"6–8","120 s"],["Ylätalja",4,"8–12","90 s"],["Vinopenkki käsipainoilla",3,"8–12","90 s"],["Soutu",3,"10–12","90 s"]]}
+],dietLibrary:[
+{name:"2300 kcal · Painonpudotus",kcal:2300,p:170,c:230,f:75},
+{name:"2500 kcal · Ylläpito",kcal:2500,p:170,c:280,f:78}
+]};
+let role="coach",page="home",selected=1,modal="",applyIndex=0;
+
+function bmr(x){let v=10*x.weight+6.25*x.height-5*x.age;return Math.round(x.sex==="Mies"?v+5:v-161)}
+function tdee(x){let m={Kevyt:1.375,Kohtalainen:1.55,Korkea:1.725}[x.activity];return Math.round(bmr(x)*m)}
+function c(x){return `<div class="card">${x}</div>`}
+function go(p){page=p;render()}
+function toggleRole(){role=role==="coach"?"client":"coach";page="home";document.getElementById("role").textContent=role==="coach"?"Valmentaja":"Asiakas";render()}
+function nav(){let a=role==="coach"?[["home","⌂","Koti"],["clients","♙","Asiakkaat"],["programs","☷","Ohjelmat"],["library","▦","Pankit"],["messages","○","Viestit"]]:[["home","⌂","Koti"],["workout","◈","Treeni"],["food","◉","Ravinto"],["progress","⌁","Seuranta"],["messages","○","Viestit"]];document.getElementById("nav").innerHTML=a.map(x=>`<button class="${page===x[0]?'on':''}" onclick="go('${x[0]}')"><span>${x[1]}</span>${x[2]}</button>`).join("")}
+function goClient(id){selected=id;page="client";render()}
+
+function home(){
+if(role==="client")return `<div class="eyebrow">ASIAKAS</div><h1>Hei, Emma! 👋</h1><p class="sub">Tässä tämän päivän tärkeimmät asiat.</p>
+${c(`<h3>Tämän päivän treeni</h3><h2>Alavartalo A</h2><p class="muted">4 liikettä · noin 55 min</p><button class="btn" onclick="go('workout')">Aloita treeni</button>`)}
+${c(`<h3>Ravinto</h3><div style="font-size:28px;font-weight:800">1 850 / 2 300 kcal</div><p class="muted">P 122 / 170 · H 132 / 230 · R 38 / 75</p><button class="btn light" onclick="go('food')">Avaa ravinto</button>`)}
+`;
+return `<div class="eyebrow">VALMENTAJA</div><h1>Hyvää päivää!</h1><p class="sub">BUILT V1 · valmennuksen työtila</p>
+${c(`<div class="grid"><div class="stat"><div class="small muted">Asiakkaita</div><b>${db.clients.length}</b></div><div class="stat"><div class="small muted">Treenipankki</div><b>${db.library.length}</b></div></div>`)}
+${c(`<h3>Viimeisimmät</h3><div class="item">Emma · ohjelma valmis</div><div class="item">Mikko · paino päivitetty</div>`)}
+<button class="btn p" onclick="go('clients')">Avaa asiakkaat</button>`;
 }
-function go(p){page=p;overlay=null;render()}
-function toggleRole(){role=role==="coach"?"client":"coach";page=role==="coach"?"dashboard":"home";render()}
-function clientPills(){return `<div class="clients">${db.clients.map(c=>`<button class="pill ${c.id===selected?"active":""}" onclick="selectClient(${c.id})">${esc(c.name)}</button>`).join("")}</div>`}
-function selectClient(id){selected=id;render()}
-function dashboard(){
- const c=selectedClient(), d=db.diets.find(x=>x.id===c.dietId), p=db.programs.find(x=>x.id===c.programId);
- return `<div class=eyebrow>VALMENTAJA</div><h1>Dashboard</h1>${clientPills()}
- <div class=grid><div class=card><div class=muted>Nykyinen paino</div><h2>${c.weight} kg</h2></div><div class=card><div class=muted>Tavoitepaino</div><h2>${c.goal} kg</h2></div><div class=card><div class=muted>Treeni</div><h2>${c.adherence}%</h2><div class=small>toteutunut</div></div><div class=card><div class=muted>Asiakas</div><h2>${esc(c.name)}</h2></div></div>
- ${card(`<h3>Painon kehitys</h3><div class=chart><canvas id=weightChart></canvas></div>`)}
- ${card(`<div class=row><div><h3>Harjoitus</h3><div class=muted>${esc(p?.name||"Ei ohjelmaa")}</div></div><button class="btn primary" onclick="go('workouts')">Avaa</button></div>`)}
- ${card(`<div class=row><div><h3>Ravinto</h3><div class=muted>${esc(d?.name||"Ei ruokavaliota")}</div></div><button class="btn primary" onclick="go('nutrition')">Avaa</button></div>`)}
- `;
+
+function clients(){return `<div class="eyebrow">VALMENTAJA</div><h1>Asiakkaat</h1><p class="sub">${db.clients.length} aktiivista asiakasta</p>
+<div class="list">${db.clients.map(x=>`<div class="item row"><div><h3>${x.name}</h3><div class="muted small">${x.weight} kg · ${x.goal}</div></div><button class="btn small" onclick="goClient(${x.id})">Avaa</button></div>`).join("")}</div>
+<button class="btn p" onclick="modal='client';render()">+ Lisää asiakas</button>`}
+
+function client(){
+let x=db.clients.find(a=>a.id===selected);
+return `<div class="eyebrow">ASIAKAS</div><h1>${x.name}</h1><p class="sub">${x.goal} · ${x.weight} kg → ${x.goalWeight} kg</p>
+${c(`<div class="grid"><div class="stat"><div class="small muted">Ikä</div><b>${x.age}</b></div><div class="stat"><div class="small muted">Pituus</div><b>${x.height} cm</b></div><div class="stat"><div class="small muted">BMR</div><b>${bmr(x)} kcal</b></div><div class="stat"><div class="small muted">TDEE</div><b>${tdee(x)} kcal</b></div></div>`)}
+${c(`<div class="row"><div><h3>Harjoitusohjelma</h3><div class="muted small">${x.workouts.length} harjoitusta</div></div><button class="btn small p" onclick="modal='workout';render()">+ Lisää</button></div>`)}
+${x.workouts.map(w=>c(`<h3>${w.name}</h3><div class="muted small">${w.tags}</div>`)).join("")}
+${c(`<div class="row"><div><h3>Ravinto-ohjelma</h3><div class="muted small">${x.diet?x.diet.kcal+" kcal · P "+x.diet.p+" g · H "+x.diet.c+" g · R "+x.diet.f+" g":"Ei määritetty"}</div></div><button class="btn small p" onclick="modal='diet';render()">Muokkaa</button></div>`)}
+${c(`<h3>Muistiinpanot</h3><p class="muted">${x.notes||"Ei muistiinpanoja."}</p>`)}
+<button class="btn light" onclick="go('clients')">← Asiakkaat</button>`;
 }
-function card(x){return `<div class=card>${x}</div>`}
-function clients(){
- return `<div class=eyebrow>VALMENTAJA</div><h1>Asiakkaat</h1><input id=search placeholder="Hae asiakkaan nimellä…" oninput="renderClientList()"><div id=clientList></div><button class="btn primary wide" onclick="openNewClient()">+ Lisää asiakas</button>`;
+
+function programs(){return `<div class="eyebrow">VALMENTAJA</div><h1>Ohjelmat</h1><p class="sub">Valitse asiakas ja rakenna viikko.</p>
+${db.clients.map(x=>`<div class="item row"><div><h3>${x.name}</h3><div class="muted small">${x.workouts.length} harjoitusta</div></div><button class="btn small p" onclick="selected=${x.id};modal='workout';render()">+ Treeni</button></div>`).join("")}
+${c(`<h3>Treenipankki säästää aikaa</h3><p class="muted small">Luo harjoitus kerran, tallenna se pankkiin ja käytä sitä uudelleen eri asiakkaille.</p>`)}`;
 }
-function renderClientList(){
- const q=($("search")?.value||"").toLowerCase();
- const a=db.clients.filter(c=>c.name.toLowerCase().includes(q));
- $("clientList").innerHTML=a.map(c=>card(`<div class=row><div><h3>${esc(c.name)}</h3><div class=muted>${c.weight} kg → ${c.goal} kg</div></div><button class=btn onclick="selectClient(${c.id});go('client')">Avaa</button></div>`)).join("")||card("Asiakasta ei löytynyt.");
+
+function library(){return `<div class="eyebrow">VALMENTAJA</div><h1>Pankit</h1><div class="tabs"><button class="on">Treenipankki</button><button onclick="alert('Ruokavaliopankki: pohjat ovat jo tietomallissa ja käyttöliittymä laajennetaan seuraavassa vaiheessa.')">Ruokavaliot</button></div>
+<button class="btn p" onclick="modal='newlib';render()">+ Luo harjoitus</button>
+<div class="list">${db.library.map((w,i)=>`<div class="item"><h3>${w.name}</h3><div class="muted small">${w.tags}</div><p class="small">${w.ex.map(e=>e[0]+" · "+e[1]+"×"+e[2]).join(" · ")}</p><button class="btn light" onclick="applyIndex=${i};modal='apply';render()">Käytä asiakkaalle</button></div>`).join("")}</div>`}
+
+function workout(){let w=db.library[0];return `<div class="eyebrow">TREENI</div><h1>${w.name}</h1><p class="sub">Tämän päivän harjoitus</p>
+<div class="list">${w.ex.map((e,i)=>`<div class="item row"><div><h3>${i+1}. ${e[0]}</h3><div class="muted small">${e[1]} × ${e[2]} · lepo ${e[3]}</div></div><button class="check" onclick="this.classList.toggle('done');this.textContent=this.textContent?'':'✓'"></button></div>`).join("")}</div>
+<button class="btn p" onclick="alert('Treeni merkitty tehdyksi!')">Lopeta treeni</button>`}
+
+function food(){return `<div class="eyebrow">RAVINTO</div><h1>Ravinto</h1><p class="sub">Tämän päivän tavoitteet</p>
+${c(`<div class="grid"><div class="stat"><div class="small muted">Kalorit</div><b>2300</b></div><div class="stat"><div class="small muted">Proteiini</div><b>170 g</b></div><div class="stat"><div class="small muted">Hiilihydraatit</div><b>230 g</b></div><div class="stat"><div class="small muted">Rasva</div><b>75 g</b></div></div>`)}
+${["Aamiainen","Lounas","Välipala","Päivällinen"].map(x=>`<div class="item row"><div><h3>${x}</h3><div class="muted small">Ei ateriaa lisätty</div></div><button class="btn small p" onclick="alert('Ruoka lisätään tähän')">+</button></div>`).join("")}`}
+
+function progress(){return `<div class="eyebrow">SEURANTA</div><h1>Kehitys</h1><p class="sub">Paino ja tavoitteet</p>${c(`<div class="row"><div><div class="small muted">Nykyinen paino</div><div style="font-size:32px;font-weight:800">82,4 kg</div></div><div style="text-align:right"><div class="small muted">Tavoite</div><b>78 kg</b></div></div><div style="height:120px;border-bottom:1px solid #ddd;margin-top:15px;background:linear-gradient(165deg,transparent 45%,#7440d8 46%,#7440d8 48%,transparent 49%)"></div>`)}</div>`}
+
+function messages(){return `<div class="eyebrow">KOMMUNIKAATIO</div><h1>Viestit</h1><p class="sub">Valmentaja ↔ asiakas</p>${c(`<div style="background:#eee;padding:11px;border-radius:15px;width:max-content">Treeniohjelma on päivitetty 💪</div><div style="background:#7440d8;color:#fff;padding:11px;border-radius:15px;width:max-content;margin:8px 0 8px auto">Kiitos! Katson sen tänään.</div>`)}<input placeholder="Kirjoita viesti…"><button class="btn" onclick="alert('Demo: viesti lähetetty')">Lähetä</button>`}
+
+function modalHtml(){
+if(!modal)return "";
+if(modal==="client")return `<div class="modal"><div class="sheet"><h2>Lisää asiakas</h2>
+<label>Nimi</label><input id="n" placeholder="Esim. Anna"><label>Ikä</label><input id="age" type="number" value="30">
+<label>Sukupuoli</label><select id="sex"><option>Nainen</option><option>Mies</option></select>
+<label>Pituus cm</label><input id="h" type="number" value="170"><label>Paino kg</label><input id="w" type="number" value="80"><label>Tavoitepaino kg</label><input id="gw" type="number" value="75">
+<label>Aktiivisuus</label><select id="act"><option>Kevyt</option><option selected>Kohtalainen</option><option>Korkea</option></select>
+<label>Tavoite</label><select id="goal"><option>Painonpudotus</option><option>Painonhallinta</option><option>Lihasmassan kasvatus</option></select>
+<button class="btn p" onclick="saveClient()">Tallenna asiakas</button><button class="btn light" onclick="modal='';render()">Peruuta</button></div></div>`;
+if(modal==="workout")return `<div class="modal"><div class="sheet"><h2>Lisää harjoitus asiakkaalle</h2><p class="muted">Valitse valmis harjoitus Treenipankista.</p>${db.library.map((w,i)=>`<div class="item row"><div><h3>${w.name}</h3><div class="muted small">${w.tags}</div></div><button class="btn small p" onclick="applyWorkout(${i})">Käytä</button></div>`).join("")}<button class="btn light" onclick="modal='';render()">Peruuta</button></div></div>`;
+if(modal==="diet")return `<div class="modal"><div class="sheet"><h2>Ravinto-ohjelma</h2><p class="muted">Valitse valmis tavoitepohja.</p>${db.dietLibrary.map((d,i)=>`<div class="item row"><div><h3>${d.name}</h3><div class="muted small">P ${d.p} · H ${d.c} · R ${d.f}</div></div><button class="btn small p" onclick="applyDiet(${i})">Käytä</button></div>`).join("")}<button class="btn light" onclick="modal='';render()">Peruuta</button></div></div>`;
+if(modal==="newlib")return `<div class="modal"><div class="sheet"><h2>Uusi treeni</h2><label>Nimi</label><input id="ln" placeholder="Esim. Koko keho A"><label>Tunnisteet</label><input id="lt" placeholder="Koko keho · Hypertrofia"><label>Ensimmäinen liike</label><input id="le" placeholder="Esim. Goblet-kyykky"><button class="btn p" onclick="saveLib()">Tallenna pankkiin</button><button class="btn light" onclick="modal='';render()">Peruuta</button></div></div>`;
+if(modal==="apply")return `<div class="modal"><div class="sheet"><h2>Käytä treeniä asiakkaalle</h2>${db.clients.map(x=>`<div class="item row"><div><h3>${x.name}</h3><div class="muted small">${x.workouts.length} harjoitusta</div></div><button class="btn small p" onclick="selected=${x.id};applyWorkout(${applyIndex})">Lisää</button></div>`).join("")}<button class="btn light" onclick="modal='';render()">Peruuta</button></div></div>`;
 }
-function clientPage(){
- const c=selectedClient(),p=db.programs.find(x=>x.id===c.programId),d=db.diets.find(x=>x.id===c.dietId);
- return `<div class=eyebrow>ASIAKAS</div><div class=row><h1>${esc(c.name)}</h1><div><button class="btn small" onclick="switchClient(-1)">←</button> <button class="btn small" onclick="switchClient(1)">→</button></div></div>${clientPills()}
- ${card(`<div class=grid><div class=stat>Nykyinen<br><b>${c.weight} kg</b></div><div class=stat>Tavoite<br><b>${c.goal} kg</b></div></div><button class="btn light wide" onclick="go('dashboard')">Dashboard</button>`)}
- ${card(`<div class=row><div><h3>Harjoitusohjelma</h3><div class=muted>${esc(p?.name||"Ei ohjelmaa")}</div></div><button class="btn primary" onclick="newProgram()">+ Uusi</button></div>${p?`<button class="btn light wide" onclick="editProgram(${p.id})">Muokkaa</button>`:""}`)}
- ${card(`<div class=row><div><h3>Ravinto</h3><div class=muted>${esc(d?.name||"Ei ruokavaliota")}</div></div><button class="btn primary" onclick="newDiet()">+ Uusi</button></div>${d?`<button class="btn light wide" onclick="editDiet(${d.id})">Muokkaa</button>`:""}`)}
- `;
-}
-function switchClient(dir){let i=db.clients.findIndex(c=>c.id===selected);selected=db.clients[(i+dir+db.clients.length)%db.clients.length].id;render()}
-function workouts(){
- const c=selectedClient();
- return `<div class=eyebrow>VALMENTAJA</div><h1>Harjoitukset</h1>${clientPills()}<p class=muted>Asiakas: <b>${esc(c.name)}</b></p><button class="btn primary wide" onclick="newProgram()">+ Uusi harjoitusohjelma</button>
- ${db.programs.map(p=>card(`<div class=row><div><h3>${esc(p.name)}</h3><div class=muted>${esc(p.goal)} · ${p.weeks.length} viikkoa</div></div><button class=btn onclick="editProgram(${p.id})">Muokkaa</button></div><button class="btn light wide" onclick="assignProgram(${p.id})">Liitä ${esc(c.name)}:lle</button><button class="btn light wide" onclick="toLibrary(${p.id})">Tallenna treenipankkiin</button>`)).join("")}`;
-}
-function programEditor(){
- const p=getProgram();
- return `<div class=modal><div class=sheet><div class=row><h2>Harjoitusohjelma</h2><button class="btn danger small" onclick="deleteProgram()">Poista</button></div>
- <label>Nimi</label><input id=progName value="${esc(p.name)}"><label>Tavoite</label><select id=progGoal>${["Hypertrofia","Voima","Olympianostot","Yleiskunto"].map(x=>`<option ${p.goal===x?"selected":""}>${x}</option>`).join("")}</select>
- ${p.weeks.map((w,wi)=>`<div class=item><div class=row><h3>${esc(w.name)}</h3><button class="btn danger small" onclick="removeWeek(${wi})">Poista</button></div>
- ${w.days.map((d,di)=>`<div class=item><div class=row><input value="${esc(d.name)}" onchange="setDayName(${wi},${di},this.value)"><button class="btn danger small" onclick="removeDay(${wi},${di})">Poista</button></div>
- ${d.ex.map((e,ei)=>`<div class=exercise><div class=exercise-grid><input value="${esc(e[0])}" onchange="setEx(${wi},${di},${ei},0,this.value)"><input type=number value="${e[1]}" onchange="setEx(${wi},${di},${ei},1,this.value)"><input value="${esc(e[2])}" onchange="setEx(${wi},${di},${ei},2,this.value)"><input value="${esc(e[3])}" onchange="setEx(${wi},${di},${ei},3,this.value)"><button class="btn danger small" onclick="removeEx(${wi},${di},${ei})">×</button></div></div>`).join("")}
- <button class="btn light small" onclick="addEx(${wi},${di})">+ Liike</button></div>`).join("")}
- <button class="btn light small" onclick="addDay(${wi})">+ Treenipäivä</button></div>`).join("")}
- <button class="btn light wide" onclick="addWeek()">+ Viikko</button><button class="btn primary wide" onclick="saveProgram()">Tallenna</button><button class="btn light wide" onclick="closeOverlay()">Sulje</button></div></div>`;
-}
-function newProgram(){const id=Date.now();db.programs.push({id,name:"Uusi ohjelma",goal:"Hypertrofia",weeks:[{name:"Viikko 1",days:[{name:"Treeni A",ex:[]}]}]});selectedClient().programId=id;save();editProgram(id)}
-function editProgram(id){editingProgram=id;overlay="program";render()}
-function assignProgram(id){selectedClient().programId=id;save();alert("Ohjelma liitetty asiakkaalle.");render()}
-function addWeek(){const p=getProgram();p.weeks.push({name:"Viikko "+(p.weeks.length+1),days:[]});render()}
-function removeWeek(i){const p=getProgram();if(p.weeks.length>1)p.weeks.splice(i,1);render()}
-function addDay(w){getProgram().weeks[w].days.push({name:"Uusi treeni",ex:[]});render()}
-function removeDay(w,d){getProgram().weeks[w].days.splice(d,1);render()}
-function setDayName(w,d,v){getProgram().weeks[w].days[d].name=v}
-function addEx(w,d){getProgram().weeks[w].days[d].ex.push(["Uusi liike",3,"8–12","90 s"]);render()}
-function removeEx(w,d,e){getProgram().weeks[w].days[d].ex.splice(e,1);render()}
-function setEx(w,d,e,k,v){getProgram().weeks[w].days[d].ex[e][k]=v}
-function saveProgram(){const p=getProgram();p.name=$("progName").value||"Ohjelma";p.goal=$("progGoal").value;save();closeOverlay()}
-function deleteProgram(){db.programs=db.programs.filter(p=>p.id!==editingProgram);db.clients.forEach(c=>{if(c.programId===editingProgram)c.programId=null});save();closeOverlay()}
-function toLibrary(id){const p=db.programs.find(x=>x.id===id),d=p?.weeks[0]?.days[0];if(!d){alert("Lisää treenipäivä ensin.");return}db.library.push({id:Date.now(),name:d.name,ex:JSON.parse(JSON.stringify(d.ex))});save();alert("Treeni tallennettu Treenipankkiin.")}
-function nutrition(){
- const c=selectedClient(),d=db.diets.find(x=>x.id===c.dietId);
- return `<div class=eyebrow>VALMENTAJA</div><h1>Ravinto</h1>${clientPills()}
- ${d?card(`<h3>${esc(d.name)}</h3><div class=macro><span>${d.kcal} kcal</span><span>P ${d.p} g</span><span>H ${d.c} g</span><span>R ${d.f} g</span></div><button class="btn light wide" onclick="editDiet(${d.id})">Muokkaa ruokavaliota</button>`):card("Asiakkaalla ei ole vielä ruokavaliota.")}
- <button class="btn primary wide" onclick="newDiet()">+ Uusi ruokavalio</button>
- ${card(`<h3>🍽️ Valmiit ateriat</h3><p class=muted>Ateriapankki ehdottaa valmiita aterioita ja näyttää niiden makrot.</p><button class="btn primary wide" onclick="go('mealBank')">Avaa ateriapankki</button>`)}
- ${d?d.meals.map(x=>{let m=db.meals.find(mm=>mm.id===x[1]);return m?card(`<div class=row><div><h3>${esc(x[0])}</h3><div class=muted>${m.kcal} kcal · P ${m.p} g · H ${m.c} g · R ${m.f} g</div></div></div>`):""}).join(""):""}`;
-}
-function newDiet(){const id=Date.now();db.diets.push({id,name:"Uusi ruokavalio",kcal:2500,p:180,c:250,f:75,meals:[]});selectedClient().dietId=id;save();editDiet(id)}
-function editDiet(id){editingDiet=id;overlay="diet";render()}
-function dietEditor(){
- const d=getDiet();
- return `<div class=modal><div class=sheet><div class=row><h2>Ruokavalio</h2><button class="btn danger small" onclick="deleteDiet()">Poista</button></div>
- <label>Nimi</label><input id=dietName value="${esc(d.name)}"><div class=grid><div><label>Kalorit</label><input id=dietK type=number value="${d.kcal}"></div><div><label>Proteiini g</label><input id=dietP type=number value="${d.p}"></div><div><label>Hiilihydraatit g</label><input id=dietC type=number value="${d.c}"></div><div><label>Rasva g</label><input id=dietF type=number value="${d.f}"></div></div>
- ${d.meals.map((x,i)=>{let m=db.meals.find(mm=>mm.id===x[1]);return `<div class=meal><div class=row><div><b>${esc(x[0])}</b><div class=muted>${m?m.kcal:0} kcal</div></div><button class="btn danger small" onclick="removeDietMeal(${i})">Poista</button></div></div>`}).join("")}
- <button class="btn light wide" onclick="go('mealBank')">+ Lisää ateria ateriapankista</button><button class="btn primary wide" onclick="saveDiet()">Tallenna</button><button class="btn light wide" onclick="closeOverlay()">Sulje</button></div></div>`;
-}
-function saveDiet(){const d=getDiet();d.name=$("dietName").value||"Ruokavalio";d.kcal=+$("dietK").value||0;d.p=+$("dietP").value||0;d.c=+$("dietC").value||0;d.f=+$("dietF").value||0;save();closeOverlay()}
-function deleteDiet(){db.diets=db.diets.filter(d=>d.id!==editingDiet);db.clients.forEach(c=>{if(c.dietId===editingDiet)c.dietId=null});save();closeOverlay()}
-function removeDietMeal(i){getDiet().meals.splice(i,1);save();render()}
-function mealBank(){
- const c=selectedClient(),d=db.diets.find(x=>x.id===c.dietId),target=d||{kcal:2500,p:180,c:250,f:75};
- const score=m=>Math.abs(m.p-target.p*.25)+Math.abs(m.c-target.c*.25)+Math.abs(m.f-target.f*.25);
- const types=["Aamiainen","Lounas","Päivällinen","Välipala"];
- return `<div class=eyebrow>RAVINTO</div><h1>Ateriapankki</h1>${clientPills()}${card(`<h3>${esc(c.name)}</h3><div class=muted>Suositukset perustuvat asiakkaan päivän tavoitteeseen.</div><div class=macro><span>${target.kcal} kcal</span><span>P ${target.p} g</span><span>H ${target.c} g</span><span>R ${target.f} g</span></div>`)}
- ${types.map(type=>`<h3 style="margin-top:18px">${type}</h3>${db.meals.filter(m=>m.type===type).sort((a,b)=>score(a)-score(b)).map(m=>`<div class=meal><div class=row><div><h3>${esc(m.name)}</h3><div class=macro><span>${m.kcal} kcal</span><span>P ${m.p} g</span><span>H ${m.c} g</span><span>R ${m.f} g</span></div></div><button class="btn primary" onclick="addMeal(${m.id})">+ Lisää</button></div><div class=small muted>${m.foods.map(esc).join(" · ")}</div></div>`).join("")}`).join("")}
- <button class="btn light wide" onclick="go('nutrition')">← Takaisin</button>`;
-}
-function addMeal(id){const d=db.diets.find(x=>x.id===selectedClient().dietId);if(!d){newDiet();return}const m=db.meals.find(x=>x.id===id);d.meals.push([m.type+" · "+m.name,id]);save();alert("Ateria lisätty ruokavalioon.");go("nutrition")}
-function library(){return `<div class=eyebrow>VALMENTAJA</div><h1>Treenipankki</h1>${db.library.map(x=>card(`<div class=row><div><h3>${esc(x.name)}</h3><div class=muted>${x.ex.length} liikettä</div></div><button class="btn danger small" onclick="db.library=db.library.filter(y=>y.id!==${x.id});save();render()">Poista</button></div>`)).join("")||card("Treenipankki on vielä tyhjä.")}`}
-function messages(){return `<div class=eyebrow>KOMMUNIKAATIO</div><h1>Viestit</h1>${role==="coach"?clientPills():""}${card(`<h3>${esc(selectedClient().name)}</h3><p class=muted>Harjoitusohjelma on päivitetty. Hyvä työ! 💪</p><input placeholder="Kirjoita viesti…"><button class="btn primary wide">Lähetä</button>`)}`}
-function home(){const c=selectedClient(),p=db.programs.find(x=>x.id===c.programId);return `<div class=eyebrow>ASIAKAS</div><h1>Hei ${esc(c.name)} 👋</h1>${card(`<h3>Tämän päivän treeni</h3><p class=muted>${esc(p?.weeks[0]?.days[0]?.name||"Ei treeniä")}</p><button class="btn primary wide" onclick="go('clientWorkout')">Aloita treeni</button>`)}${card(`<h3>Paino</h3><h2>${c.weight} kg</h2><button class="btn light wide" onclick="go('progress')">Seuraa kehitystä</button>`)}`}
-function clientWorkout(){const c=selectedClient(),p=db.programs.find(x=>x.id===c.programId),d=p?.weeks[0]?.days[0];return `<div class=eyebrow>TREENI</div><h1>${esc(d?.name||"Treeni")}</h1>${(d?.ex||[]).map((e,i)=>`<div class=item><div class=row><div><b>${i+1}. ${esc(e[0])}</b><div class=muted>${e[1]} × ${esc(e[2])} · ${esc(e[3])}</div></div><button class=btn onclick="this.textContent='✓ Tehty'">Tehty</button></div></div>`).join("")||card("Ei liikkeitä vielä.")}`}
-function clientFood(){const d=db.diets.find(x=>x.id===selectedClient().dietId);return `<div class=eyebrow>RAVINTO</div><h1>${esc(d?.name||"Ravinto")}</h1>${d?card(`<div class=macro><span>${d.kcal} kcal</span><span>P ${d.p} g</span><span>H ${d.c} g</span><span>R ${d.f} g</span></div>`)+d.meals.map(x=>{const m=db.meals.find(mm=>mm.id===x[1]);return card(`<h3>${esc(x[0])}</h3><div class=muted>${m?m.foods.join(" · "):""}</div>`) }).join(""):card("Ruokavaliota ei ole vielä määritetty.")}`}
-function progress(){const c=selectedClient();return `<div class=eyebrow>PAINO</div><h1>Painon kehitys</h1>${card(`<h2>${c.weight} kg</h2><div class=muted>Tavoite ${c.goal} kg</div><div class=chart><canvas id=progressChart></canvas></div>`)}${card(`<label>Lisää uusi paino</label><input id=newWeight type=number step=.1 value="${c.weight}"><button class="btn primary wide" onclick="addWeight()">Tallenna paino</button>`)}`}
-function addWeight(){const c=selectedClient(),v=+$("newWeight").value;if(!v)return;c.weight=v;c.history.push(v);save();render()}
-function openNewClient(){overlay="client";render()}
-function clientModal(){return `<div class=modal center><div class="sheet center"><h2>Lisää asiakas</h2><label>Nimi</label><input id=newClientName placeholder="Esim. Matti"><label>Paino kg</label><input id=newClientWeight type=number value=80><label>Tavoitepaino kg</label><input id=newClientGoal type=number value=75><button class="btn primary wide" onclick="createClient()">Tallenna</button><button class="btn light wide" onclick="closeOverlay()">Peruuta</button></div></div>`}
-function createClient(){const w=+$("newClientWeight").value||80,g=+$("newClientGoal").value||w;const c={id:Date.now(),name:$("newClientName").value.trim()||"Uusi asiakas",weight:w,goal:g,history:[w],adherence:0,programId:null,dietId:null};db.clients.push(c);selected=c.id;save();closeOverlay()}
-function closeOverlay(){overlay=null;render()}
-function drawChart(id){const c=$(""+id);if(!c)return;const data=selectedClient().history,ctx=c.getContext("2d"),ratio=window.devicePixelRatio||1,w=c.clientWidth,h=c.clientHeight;c.width=w*ratio;c.height=h*ratio;ctx.scale(ratio,ratio);const pad=28,min=Math.min(...data,selectedClient().goal)-1,max=Math.max(...data,selectedClient().goal)+1;const X=i=>pad+i*(w-pad*2)/Math.max(1,data.length-1),Y=v=>h-pad-(v-min)/(max-min)*(h-pad*2);ctx.strokeStyle="#ddd";ctx.beginPath();ctx.moveTo(pad,h-pad);ctx.lineTo(w-pad,h-pad);ctx.stroke();ctx.setLineDash([5,5]);ctx.strokeStyle="#6a6";ctx.beginPath();ctx.moveTo(pad,Y(selectedClient().goal));ctx.lineTo(w-pad,Y(selectedClient().goal));ctx.stroke();ctx.setLineDash([]);ctx.strokeStyle="#6d3fd0";ctx.lineWidth=3;ctx.beginPath();data.forEach((v,i)=>i?ctx.lineTo(X(i),Y(v)):ctx.moveTo(X(i),Y(v)));ctx.stroke()}
-function render(){
- nav();
- let html="";
- if(role==="coach"){const pages={dashboard,clients,client:clientPage,workouts,nutrition,mealBank,library,messages};html=(pages[page]||dashboard)()}
- else {const pages={home,clientWorkout,clientFood,progress,messages};html=(pages[page]||home)()}
- $("main").innerHTML=html+(overlay==="program"?programEditor():overlay==="diet"?dietEditor():overlay==="client"?clientModal():"");
- if(page==="clients")renderClientList();
- if(page==="dashboard")drawChart("weightChart");
- if(page==="progress")drawChart("progressChart");
-}
-window.go=go;window.toggleRole=toggleRole;window.selectClient=selectClient;window.switchClient=switchClient;window.openNewClient=openNewClient;window.createClient=createClient;window.editProgram=editProgram;window.newProgram=newProgram;window.assignProgram=assignProgram;window.addWeek=addWeek;window.removeWeek=removeWeek;window.addDay=addDay;window.removeDay=removeDay;window.setDayName=setDayName;window.addEx=addEx;window.removeEx=removeEx;window.setEx=setEx;window.saveProgram=saveProgram;window.deleteProgram=deleteProgram;window.toLibrary=toLibrary;window.newDiet=newDiet;window.editDiet=editDiet;window.saveDiet=saveDiet;window.deleteDiet=deleteDiet;window.removeDietMeal=removeDietMeal;window.addMeal=addMeal;window.closeOverlay=closeOverlay;window.addWeight=addWeight;window.renderClientList=renderClientList;
+function saveClient(){let x={id:Date.now(),name:document.getElementById("n").value||"Uusi asiakas",age:+document.getElementById("age").value,sex:document.getElementById("sex").value,height:+document.getElementById("h").value,weight:+document.getElementById("w").value,goalWeight:+document.getElementById("gw").value,activity:document.getElementById("act").value,goal:document.getElementById("goal").value,notes:"",workouts:[],diet:null};db.clients.push(x);selected=x.id;modal="";page="clients";render()}
+function applyWorkout(i){let x=db.clients.find(a=>a.id===selected),w=db.library[i];x.workouts.push(JSON.parse(JSON.stringify(w)));modal="";page="client";render()}
+function applyDiet(i){let x=db.clients.find(a=>a.id===selected);x.diet={...db.dietLibrary[i]};modal="";page="client";render()}
+function saveLib(){let n=document.getElementById("ln").value||"Uusi harjoitus",t=document.getElementById("lt").value||"Oma",e=document.getElementById("le").value||"Uusi liike";db.library.push({name:n,tags:t,ex:[[e,3,"8–12","90 s"]]});modal="";page="library";render()}
+function render(){let map=role==="coach"?{home,clients,client,programs,library,messages}:{home,workout,food,progress,messages};document.getElementById("main").innerHTML=(map[page]||home)()+modalHtml();nav()}
 render();
-})();
 </script>
-</body>
-</html>
+</body></html>
