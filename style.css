@@ -43,3 +43,5 @@ h2{font-size:20px;margin:0 0 6px}h3{font-size:16px;margin:0 0 6px}
 .row{display:flex;justify-content:space-between;align-items:center;gap:10px}.weekToggle{width:100%;border:0;background:transparent;padding:2px 0;display:flex;justify-content:space-between;align-items:center;text-align:left;font-size:16px}.weekToggle span:last-child{font-size:22px;color:#6f46d8}
 
 .note{font-size:13px;line-height:1.4}.chart text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#555}.weekToggle{cursor:pointer}
+
+.calendar-card{position:sticky;top:0;z-index:3}.calendar-date{text-align:center;flex:1}.calendar-card input[type=date]{margin-top:10px;width:100%}.section{margin:12px 0;padding:12px;border-radius:12px;background:#f6f6f8}.section h3{margin:0 0 8px}.exercise{padding:9px 0;border-bottom:1px solid #ddd}.exercise:last-child{border-bottom:0}.note{font-size:13px;line-height:1.4;margin-top:6px;padding:7px;border-radius:8px;background:#eee}
